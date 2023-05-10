@@ -35,6 +35,7 @@ members = [
     'internal/backends/testing',
     'internal/renderers/skia',
     'internal/renderers/femtovg',
+    'internal/renderers/d2d',
     'internal/common',
     'internal/compiler',
     'internal/compiler/parser-test-macro',
@@ -84,13 +85,13 @@ default-members = [
     'tools/viewer',
 ]
 
-resolver="2"
+resolver = "2"
 
 [workspace.package]
 rust-version = "1.66"
 
 [workspace.dependencies]
-resvg = { version= "0.32.0", default-features = false }
+resvg = { version = "0.32.0", default-features = false }
 fontdb = { version = "0.13.1", features = ["fontconfig"] }
 yeslogic-fontconfig-sys = { version = "3.2.0", features = ["dlopen"] }
 
@@ -100,4 +101,3 @@ panic = "abort"
 
 [profile.dev]
 panic = "abort"
-

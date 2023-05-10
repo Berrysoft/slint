@@ -1,0 +1,26 @@
+[package]
+name = "i-slint-renderer-d2d"
+version = "0.1.0"
+edition = "2021"
+rust-version.workspace = true
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
+i-slint-core = { version = "=1.0.3", path = "../../../internal/core", features = [
+    "box-shadow-cache",
+] }
+i-slint-core-macros = { version = "=1.0.3", path = "../../../internal/core-macros" }
+i-slint-common = { version = "=1.0.3", path = "../../../internal/common" }
+i-slint-backend-winit = { version = "=1.0.3", path = "../../../internal/backends/winit" }
+
+windows = { version = "0.48", features = [
+    "Foundation_Numerics",
+    "Win32_Foundation",
+    "Win32_Graphics_Direct2D",
+    "Win32_Graphics_Direct2D_Common",
+    "Win32_Graphics_DirectWrite",
+    "Win32_Graphics_Dxgi_Common",
+] }
+raw-window-handle = { version = "0.5", features = ["alloc"] }
